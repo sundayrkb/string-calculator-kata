@@ -9,6 +9,6 @@ class TestStringCalculator < Test::Unit::TestCase
 
   def test_single_number_returns_itself
     calc = StringCalculator.new
-    assert_equal 1, calc.add("1") # test fails because add defination returns 0
+    assert_equal 1, calc.add("1")
   end
 end
