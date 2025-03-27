@@ -21,4 +21,9 @@ class TestStringCalculator < Test::Unit::TestCase
     calc = StringCalculator.new
     assert_equal 7, calc.add("1,2,4")
   end
+
+  def test_newline_delimiter
+    calc = StringCalculator.new
+    assert_equal 6, calc.add("1\n2,3")
+  end
 end
