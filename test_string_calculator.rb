@@ -1,7 +1,3 @@
-# file test_string_calculator.rb created
-# NO defination  (Red Phase)
-# Test a simple String calculator with a method signature
-
 require 'test/unit'
 require_relative 'string_calculator'
 
