@@ -11,4 +11,9 @@ class TestStringCalculator < Test::Unit::TestCase
     calc = StringCalculator.new
     assert_equal 1, calc.add("1")
   end
+
+  def test_two_numbers_with_comma
+    calc = StringCalculator.new
+    assert_equal 6, calc.add("1,5")
+  end
 end
