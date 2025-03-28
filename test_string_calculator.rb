@@ -30,4 +30,10 @@ class TestStringCalculator < Test::Unit::TestCase
     calc = StringCalculator.new
     assert_equal 3, calc.add("//;\n1;2")
   end
+  def test_negative_numbers_not_allowed
+    calc = StringCalculator.new
+    assert_raise(RuntimeError) do
+      calc.add("1,-2")
+    end
+  end
 end
