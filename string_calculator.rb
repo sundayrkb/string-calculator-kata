@@ -4,7 +4,7 @@ class StringCalculator
     delimiter, numbers = parse_demiliter(numbers) # given string "//;\n1;2" identify delimiter, numbers
     nums = numbers.split(delimiter).map(&:to_i)
     negatives = nums.select { |n| n < 0 } # find negatives
-    raise "Negatives not allowed: #{negatives}" unless negatives.empty?
+    raise "Negatives numbers not allowed: #{negatives.join(',')}" unless negatives.empty?
     nums.sum
   end
 

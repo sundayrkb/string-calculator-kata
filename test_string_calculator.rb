@@ -36,4 +36,10 @@ class TestStringCalculator < Test::Unit::TestCase
       calc.add("1,-2")
     end
   end
+  def test_multiple_negative_numbers_not_allowed
+    calc = StringCalculator.new
+    assert_raise(RuntimeError, "Negatives not allowed: -2,-3") do
+      calc.add("1,-2,-3")
+    end
+  end
 end
