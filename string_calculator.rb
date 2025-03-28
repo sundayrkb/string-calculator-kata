@@ -2,7 +2,10 @@ class StringCalculator
   def add(numbers)
     0 if numbers.empty?   # check if the string is empty.
     delimiter, numbers = parse_demiliter(numbers) # given string "//;\n1;2" identify delimiter, numbers
-    numbers.split(delimiter).map(&:to_i).sum
+    nums = numbers.split(delimiter).map(&:to_i)
+    negatives = nums.select { |n| n < 0 } # find negatives
+    raise "Negatives not allowed: #{negatives}" unless negatives.empty?
+    nums.sum
   end
 
   private
